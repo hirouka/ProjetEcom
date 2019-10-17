@@ -1,0 +1,49 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "org.projetecom.site",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "6.3.1",
+    "applicationType": "monolith",
+    "baseName": "ProjetECOM",
+    "packageName": "org.projetecom.site",
+    "packageFolder": "org/projetecom/site",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "Y2EwYjM2NGVmNDQ5MTIyODlkOWM4MzhkYjRkYTYwZThmOTFlM2JjY2EzY2JjYWIzY2NjZmNiYjk1MGFjMjU0MjdkOThhZDM1NWFhNDU3NDM1NTUzODU2OGI2NzM4Yzk3NWY3ZjU2N2I3NmYwOWJlNTYzOGQ4Y2Y1Y2Q3ZTUzNTk=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "litera",
+    "clientThemeVariant": "primary",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "blueprints": []
+  }
+}
