@@ -41,7 +41,8 @@ install:
   - npm install
 script:
   - chmod +x mvnw
-  - ./mvnw -ntp clean verify
+  - sudo npm run webpack:build
+  - sudo ./mvnw -ntp clean verify
   - ./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test' -Dmaven.repo.local=$MAVEN_USER_HOME
   - if [ $TRAVIS_PULL_REQUEST == "false" ]; then ./mvnw -ntp org.jacoco:jacoco-maven-plugin:prepare-agent initialize sonar:sonar -Dsonar.organization=hirouka -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN; fi
   - ./mvnw -ntp verify -Pprod -DskipTests
