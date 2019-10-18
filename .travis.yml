@@ -1,5 +1,7 @@
 os:
   - linux
+langage: 
+  - java
 services:
   - docker
 language: node_js
