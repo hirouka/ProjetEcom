@@ -41,17 +41,11 @@ install:
   - npm install
 script:
   - chmod +x mvnw
-  - echo ********11111111111111111111111111111111111111111111111111111111111111111111111111111111*******
   - ./mvnw -ntp clean verify
-  - echo ********22222222222222222222222222222222222222222222222222222222222222222222222222222222*******
   - ./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test' -Dmaven.repo.local=$MAVEN_USER_HOME
-  - echo ********33333333333333333333333333333333333333333333333333333333333333333333333333333333*******
   - if [ $TRAVIS_PULL_REQUEST == "false" ]; then ./mvnw -ntp org.jacoco:jacoco-maven-plugin:prepare-agent initialize sonar:sonar -Dsonar.organization=hirouka -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN; fi
-  - echo ********44444444444444444444444444444444444444444444444444444444444444444444444444444444*******
   - ./mvnw -ntp verify -Pprod -DskipTests
-  - echo ********55555555555555555555555555555555555555555555555555555555555555555555555555555555*******
   - ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=projet-ecom
-  - echo ********66666666666666666666666666666666666666666666666666666666666666666666666666666666*******
 notifications:
   webhooks:
     on_success: change # options: [always|never|change] default: always
