@@ -1,6 +1,6 @@
 os:
   - linux
-langage: 
+language: 
   - java
 services:
   - docker
