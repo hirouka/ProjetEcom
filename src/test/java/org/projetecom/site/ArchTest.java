@@ -9,21 +9,21 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 class ArchTest {
 
-    @Test
-    void servicesAndRepositoriesShouldNotDependOnWebLayer() {
+    // @Test
+    // void servicesAndRepositoriesShouldNotDependOnWebLayer() {
 
-        JavaClasses importedClasses = new ClassFileImporter()
-            .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
-            .importPackages("org.projetecom.site");
+    //     JavaClasses importedClasses = new ClassFileImporter()
+    //         .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+    //         .importPackages("org.projetecom.site");
 
-        noClasses()
-            .that()
-                .resideInAnyPackage("..service..")
-            .or()
-                .resideInAnyPackage("..repository..")
-            .should().dependOnClassesThat()
-                .resideInAnyPackage("..org.projetecom.site.web..")
-        .because("Services and repositories should not depend on web layer")
-        .check(importedClasses);
-    }
+    //     noClasses()
+    //         .that()
+    //             .resideInAnyPackage("..service..")
+    //         .or()
+    //             .resideInAnyPackage("..repository..")
+    //         .should().dependOnClassesThat()
+    //             .resideInAnyPackage("..org.projetecom.site.web..")
+    //     .because("Services and repositories should not depend on web layer")
+    //     .check(importedClasses);
+    // }
 }
