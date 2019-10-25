@@ -42,11 +42,11 @@ install:
 script:
   - chmod +x mvnw
 # - npm run webpack:build
-  - ./mvnw -ntp clean verify
-  - ./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test' -Dmaven.repo.local=$MAVEN_USER_HOME
-  - if [ $TRAVIS_PULL_REQUEST == "false" ]; then ./mvnw -ntp org.jacoco:jacoco-maven-plugin:prepare-agent initialize sonar:sonar -Dsonar.organization=hirouka -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN; fi
-  - ./mvnw -ntp verify -Pprod -DskipTests
-  - ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=projet-ecom
+  - sudo ./mvnw -ntp clean verify
+  - sudo ./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test' -Dmaven.repo.local=$MAVEN_USER_HOME
+  - if [ $TRAVIS_PULL_REQUEST == "false" ]; then sudo ./mvnw -ntp org.jacoco:jacoco-maven-plugin:prepare-agent initialize sonar:sonar -Dsonar.organization=hirouka -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN; fi
+  - sudo ./mvnw -ntp verify -Pprod -DskipTests
+  - sudo ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=projet-ecom
 notifications:
   webhooks:
     on_success: change # options: [always|never|change] default: always
